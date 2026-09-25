@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kipepeo Guesthouse — Before</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; color: #a8a8a8; background: #fff; font: 16px Arial, sans-serif; }
+    header { width: 980px; margin: 0 auto; padding: 24px 0; display: flex; justify-content: space-between; align-items: center; }
+    nav a { margin-left: 28px; color: #a1a1a1; text-decoration: none; }
+    .hero { width: 980px; min-height: 540px; margin: 0 auto; padding: 120px 70px; background: #f4eadc; }
+    h1 { margin: 0 0 18px; color: #cf9971; font-size: 58px; font-weight: 400; }
+    .hero p { width: 680px; font-size: 19px; line-height: 1.7; }
+    .buttons { margin-top: 32px; }
+    .buttons a { display: inline-block; margin-right: 12px; padding: 14px 22px; color: white; background: #cda07e; text-decoration: none; }
+    section { width: 980px; margin: 70px auto; }
+    .rooms { display: flex; width: 1100px; gap: 22px; }
+    .room { width: 345px; padding: 25px; background: #f7f7f7; }
+    .room h3 { color: #bf9474; }
+    footer { margin-top: 90px; padding: 45px calc((100% - 980px) / 2); background: #eee; white-space: nowrap; }
+    @media (max-width: 600px) {
+      header, .hero, section { margin-left: 24px; }
+      .hero { padding-left: 35px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <strong>Kipepeo Guesthouse</strong>
+    <nav aria-label="Primary"><a href="#about">About</a><a href="#rooms">Rooms</a><a href="#contact">Contact</a></nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Welcome to paradise</h1>
+      <p>Come experience a wonderful and unforgettable stay at our beautiful guesthouse where we offer many different things to all kinds of guests and make your holiday special.</p>
+      <div class="buttons"><a href="#contact">Book now</a><a href="#rooms">Learn more</a><a href="#contact">Contact us</a></div>
+    </section>
+    <section id="about">
+      <h2>About our property</h2>
+      <p>We are located near the coast and have comfortable rooms, breakfast, a courtyard, local recommendations and many more things. Our friendly staff can help you during your stay and answer any questions you may have about the area.</p>
+    </section>
+    <section id="rooms">
+      <h2>Our rooms</h2>
+      <div class="rooms">
+        <article class="room"><h3>Garden Room</h3><p>Comfortable room. $54 USD / night</p></article>
+        <article class="room"><h3>Courtyard Room</h3><p>Quiet room. From $68 per night</p></article>
+        <article class="room"><h3>Family Room</h3><p>Large room. USD 92/night</p></article>
+      </div>
+    </section>
+  </main>
+  <footer id="contact">Email: <a href="mailto:%20hello@kipepeo.example">hello@kipepeo.example</a> · Phone: +255 700 000 000 · Copyright 2023</footer>
+</body>
+</html>

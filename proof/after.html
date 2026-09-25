@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A fictional mobile-first guesthouse page created as an independent website-rescue demonstration.">
+  <title>Kipepeo Guesthouse — Fictional Rescue Demo</title>
+  <style>
+    :root {
+      --ink: #172621;
+      --muted: #52645e;
+      --paper: #f7f2e8;
+      --cream: #fffdf8;
+      --leaf: #1e6554;
+      --leaf-dark: #13473c;
+      --coral: #d5694d;
+      --sun: #efb44a;
+      --line: #d8d4c8;
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--cream); font: 16px/1.55 ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    a { color: inherit; text-underline-offset: .2em; }
+    a:focus-visible { outline: 3px solid var(--sun); outline-offset: 4px; border-radius: 3px; }
+    .skip { position: absolute; left: 16px; top: -60px; z-index: 10; padding: 10px 14px; color: white; background: var(--ink); }
+    .skip:focus { top: 12px; }
+    header { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--cream) 92%, transparent); border-bottom: 1px solid var(--line); backdrop-filter: blur(12px); }
+    .bar { width: min(var(--max), calc(100% - 36px)); min-height: 72px; margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font: 700 1.02rem Georgia, serif; }
+    .mark { width: 32px; aspect-ratio: 1; display: grid; place-items: center; color: white; background: var(--leaf); border-radius: 50% 50% 50% 12%; transform: rotate(-8deg); }
+    nav { display: flex; align-items: center; gap: clamp(14px, 3vw, 30px); }
+    nav a { color: var(--muted); font-size: .88rem; font-weight: 650; text-decoration: none; }
+    nav a:hover { color: var(--ink); }
+    .header-cta { padding: 10px 15px; color: white; background: var(--leaf); border-radius: 999px; }
+    .hero { background: var(--paper); border-bottom: 1px solid var(--line); }
+    .hero-grid { width: min(var(--max), calc(100% - 36px)); min-height: 650px; margin: auto; display: grid; grid-template-columns: 1.08fr .92fr; gap: clamp(30px, 7vw, 90px); align-items: center; padding: 74px 0; }
+    .eyebrow { color: var(--leaf); font-size: .76rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+    h1 { max-width: 700px; margin: 14px 0 20px; font: 700 clamp(3rem, 7vw, 6.4rem)/.9 Georgia, serif; letter-spacing: -.055em; }
+    .lede { max-width: 570px; margin: 0; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.28rem); }
+    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; margin-top: 32px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 19px; color: white; background: var(--leaf); border-radius: 4px; font-weight: 750; text-decoration: none; box-shadow: 0 8px 22px rgba(30,101,84,.18); }
+    .button:hover { background: var(--leaf-dark); }
+    .text-link { font-weight: 750; text-decoration-thickness: 2px; }
+    .facts { display: flex; flex-wrap: wrap; gap: 12px 24px; margin: 34px 0 0; padding: 0; list-style: none; color: var(--muted); font-size: .88rem; }
+    .facts li::before { content: "✓"; margin-right: 7px; color: var(--leaf); font-weight: 900; }
+    .illustration { position: relative; min-height: 500px; display: grid; place-items: center; }
+    .illustration::before { content: ""; position: absolute; inset: 6% 2% 0 10%; background: var(--sun); border-radius: 47% 53% 35% 65% / 47% 35% 65% 53%; opacity: .22; }
+    .illustration svg { position: relative; width: min(100%, 500px); height: auto; filter: drop-shadow(0 26px 30px rgba(23,38,33,.13)); }
+    section.content { width: min(var(--max), calc(100% - 36px)); margin: auto; padding: 86px 0; }
+    .section-head { display: grid; grid-template-columns: .75fr 1.25fr; gap: 34px; align-items: start; margin-bottom: 40px; }
+    h2 { margin: 0; font: 700 clamp(2rem, 4vw, 3.4rem)/1 Georgia, serif; letter-spacing: -.035em; }
+    .section-head p { max-width: 640px; margin: 0; color: var(--muted); font-size: 1.06rem; }
+    .rooms { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
+    .room { min-width: 0; padding: 28px 24px 28px 0; border-bottom: 1px solid var(--line); }
+    .room + .room { padding-left: 24px; border-left: 1px solid var(--line); }
+    .room-no { color: var(--coral); font-size: .78rem; font-weight: 850; letter-spacing: .12em; }
+    .room h3 { margin: 34px 0 8px; font: 700 1.45rem Georgia, serif; }
+    .room p { min-height: 54px; margin: 0 0 24px; color: var(--muted); }
+    .rate { display: flex; align-items: baseline; gap: 6px; }
+    .rate strong { font: 700 1.8rem Georgia, serif; }
+    .rate span { color: var(--muted); font-size: .82rem; }
+    .contact { color: white; background: var(--leaf-dark); }
+    .contact-grid { width: min(var(--max), calc(100% - 36px)); margin: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 70px; padding: 76px 0; }
+    .contact h2 { color: white; }
+    .contact p { color: #d6e4df; }
+    .contact-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid rgba(255,255,255,.25); }
+    .contact-list li { display: grid; grid-template-columns: 90px 1fr; gap: 18px; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,.25); }
+    .contact-list span { color: #aec6be; font-size: .78rem; font-weight: 750; letter-spacing: .1em; text-transform: uppercase; }
+    .contact-list a { color: white; font-weight: 700; }
+    footer { width: min(var(--max), calc(100% - 36px)); margin: auto; display: flex; justify-content: space-between; gap: 18px; padding: 24px 0; color: var(--muted); font-size: .78rem; }
+    @media (max-width: 800px) {
+      .bar { min-height: 64px; }
+      nav a:not(.header-cta) { display: none; }
+      .hero-grid { min-height: auto; grid-template-columns: 1fr; padding: 58px 0 22px; }
+      .illustration { min-height: 360px; }
+      .illustration svg { width: min(92%, 440px); }
+      .section-head, .contact-grid { grid-template-columns: 1fr; gap: 24px; }
+      .rooms { grid-template-columns: 1fr; }
+      .room, .room + .room { padding: 24px 0; border-left: 0; }
+      .room p { min-height: auto; }
+    }
+    @media (max-width: 430px) {
+      h1 { font-size: clamp(2.8rem, 15vw, 4.4rem); }
+      .actions { align-items: stretch; flex-direction: column; }
+      .button { width: 100%; }
+      .facts { display: grid; gap: 8px; }
+      .illustration { min-height: 290px; }
+      footer { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header>
+    <div class="bar">
+      <a class="brand" href="#main"><span class="mark" aria-hidden="true">K</span><span>Kipepeo Guesthouse</span></a>
+      <nav aria-label="Primary"><a href="#stay">Rooms & rates</a><a href="#contact">Contact</a><a class="header-cta" href="mailto:hello@kipepeo.example?subject=Availability%20request">Check availability</a></nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Fictional rescue demonstration · Zanzibar</div>
+          <h1>A quiet base near the coast.</h1>
+          <p class="lede">Three simple rooms around a shaded courtyard, breakfast each morning and direct help planning your stay.</p>
+          <div class="actions"><a class="button" href="mailto:hello@kipepeo.example?subject=Availability%20request">Check availability</a><a class="text-link" href="#stay">View rooms and rates</a></div>
+          <ul class="facts"><li>Breakfast included</li><li>Airport pickup available</li><li>Direct booking support</li></ul>
+        </div>
+        <div class="illustration" aria-label="Illustration of a coastal guesthouse courtyard">
+          <svg viewBox="0 0 520 520" role="img" aria-labelledby="courtyard-title courtyard-desc">
+            <title id="courtyard-title">Kipepeo courtyard</title>
+            <desc id="courtyard-desc">A stylized guesthouse, palm leaves, sun and garden path.</desc>
+            <path fill="#fffdf8" d="M61 188 260 55l199 133v254H61z"/>
+            <path fill="#d5694d" d="m42 190 218-151 218 151-24 35L260 91 66 225z"/>
+            <path fill="#dfe9df" d="M87 213h346v214H87z"/>
+            <path fill="#1e6554" d="M217 262h86v165h-86z"/>
+            <path fill="#fffdf8" d="M236 285h48v54h-48z"/>
+            <g fill="#efb44a"><path d="M116 258h63v70h-63z"/><path d="M341 258h63v70h-63z"/></g>
+            <g fill="#172621"><path d="M127 269h41v48h-41z"/><path d="M352 269h41v48h-41z"/></g>
+            <path fill="#c8a06f" d="M181 520h158l-42-181h-74z"/>
+            <path fill="#1e6554" d="M49 347c42-77 94-95 139-41-62 5-80 52-139 41Z"/>
+            <path fill="#13473c" d="M471 355c-52-80-103-88-143-30 61-1 83 43 143 30Z"/>
+            <circle cx="411" cy="93" r="43" fill="#efb44a"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="content" id="stay">
+      <div class="section-head"><h2>Pick the room that fits.</h2><p>Rates use one format and the important differences are visible without opening another page. All details below are fictional.</p></div>
+      <div class="rooms">
+        <article class="room"><span class="room-no">ROOM 01</span><h3>Garden room</h3><p>Queen bed, garden-facing desk and private shower.</p><div class="rate"><strong>$54</strong><span>USD · per night</span></div></article>
+        <article class="room"><span class="room-no">ROOM 02</span><h3>Courtyard room</h3><p>Queen bed, courtyard veranda and private shower.</p><div class="rate"><strong>$68</strong><span>USD · per night</span></div></article>
+        <article class="room"><span class="room-no">ROOM 03</span><h3>Family room</h3><p>Queen and single bed, sitting area and private shower.</p><div class="rate"><strong>$92</strong><span>USD · per night</span></div></article>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact-grid">
+        <div><div class="eyebrow" style="color:#efc76f">Direct contact</div><h2>Ask about your dates.</h2><p>This fictional demonstration uses valid, readable contact links. No form submits data.</p></div>
+        <ul class="contact-list">
+          <li><span>Email</span><a href="mailto:hello@kipepeo.example">hello@kipepeo.example</a></li>
+          <li><span>Phone</span><a href="tel:+255700000000">+255 700 000 000</a></li>
+          <li><span>Hours</span><strong>08:00–20:00 EAT</strong></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer><span>Fictional portfolio demonstration — not a real guesthouse.</span><span>Designed and built by Tanisha Hassija.</span></footer>
+</body>
+</html>

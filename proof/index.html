@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Website Rescue Sprint — Fictional Proof</title>
+  <style>
+    :root { --ink:#19211f; --muted:#61706b; --paper:#f1eee7; --white:#fffdf8; --green:#1e6554; --coral:#d5694d; --line:#d7d2c7; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:var(--paper); font:16px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif; }
+    a:focus-visible { outline:3px solid #efb44a; outline-offset:4px; }
+    main { width:min(1100px,calc(100% - 32px)); margin:34px auto 70px; }
+    header { display:grid; grid-template-columns:1fr auto; gap:28px; align-items:end; padding-bottom:28px; border-bottom:2px solid var(--ink); }
+    .eyebrow { color:var(--green); font-size:.76rem; font-weight:850; letter-spacing:.15em; text-transform:uppercase; }
+    h1 { max-width:760px; margin:9px 0 0; font:700 clamp(2.6rem,7vw,5.4rem)/.94 Georgia,serif; letter-spacing:-.045em; }
+    .tag { padding:9px 13px; color:var(--coral); border:1px solid var(--coral); border-radius:999px; font-size:.78rem; font-weight:800; white-space:nowrap; }
+    .intro { display:grid; grid-template-columns:1.15fr .85fr; gap:50px; padding:42px 0; }
+    .intro p { margin:0; color:var(--muted); font-size:1.08rem; }
+    .score { display:grid; grid-template-columns:repeat(2,1fr); border-top:1px solid var(--line); }
+    .score div { padding:16px 0; border-bottom:1px solid var(--line); }
+    .score div:nth-child(even) { padding-left:18px; border-left:1px solid var(--line); }
+    .score strong { display:block; color:var(--green); font:700 1.7rem Georgia,serif; }
+    .score span { color:var(--muted); font-size:.8rem; }
+    .versions { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+    .version { min-height:330px; display:flex; flex-direction:column; justify-content:space-between; padding:28px; border:1px solid var(--line); background:var(--white); }
+    .version.before { background:#ececec; }
+    .label { font-size:.72rem; font-weight:850; letter-spacing:.13em; text-transform:uppercase; }
+    .before .label { color:#777; }
+    .after .label { color:var(--green); }
+    h2 { margin:16px 0 10px; font:700 2rem/1 Georgia,serif; }
+    .version p { color:var(--muted); }
+    .version ul { margin:20px 0 28px; padding-left:20px; color:var(--muted); }
+    .button { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:12px 18px; color:white; background:var(--ink); font-weight:800; text-decoration:none; }
+    .after .button { background:var(--green); }
+    .note { margin-top:18px; color:var(--muted); font-size:.82rem; }
+    @media(max-width:720px){ header,.intro,.versions{grid-template-columns:1fr}.tag{justify-self:start}.intro{gap:24px}.version{min-height:auto} }
+  </style>
+</head>
+<body>
+  <main>
+    <header><div><div class="eyebrow">Website Rescue Sprint · proof sample</div><h1>Five focused repairs. One clearer page.</h1></div><div class="tag">FICTIONAL · NOT CLIENT WORK</div></header>
+    <section class="intro"><p>Kipepeo Guesthouse is a self-contained demonstration of the exact service being sold: one existing page, five agreed frontend defects, a mobile pass and honest verification notes.</p><div class="score"><div><strong>1</strong><span>page</span></div><div><strong>5</strong><span>scoped defects</span></div><div><strong>0</strong><span>remote assets</span></div><div><strong>0</strong><span>client claims</span></div></div></section>
+    <section class="versions" aria-label="Before and after versions">
+      <article class="version before"><div><span class="label">Starting point</span><h2>Before</h2><p>A fixed-width fictional page with weak contrast, conflicting actions, unreliable contact markup and horizontal mobile overflow.</p><ul><li>Intentionally flawed</li><li>Useful for comparison only</li><li>No real business represented</li></ul></div><a class="button" href="before.html">Inspect the before page</a></article>
+      <article class="version after"><div><span class="label">Rescued page</span><h2>After</h2><p>A mobile-first page with a clear booking path, consistent rates, valid contact links, visible keyboard focus and original inline artwork.</p><ul><li>Plain HTML and CSS</li><li>Responsive from 320px upward</li><li>Semantic, self-contained markup</li></ul></div><a class="button" href="after.html">Inspect the repaired page</a></article>
+    </section>
+    <p class="note">This sample demonstrates frontend judgment and implementation. It does not claim conversion gains, production hosting, analytics, a CMS, payment integration or client results.</p>
+  </main>
+</body>
+</html>
